@@ -220,7 +220,7 @@ static CGSize const kDefaultDotSize = {8, 8};
         }
     } else {
         dotView = [[UIImageView alloc] initWithImage:self.dotImage];
-        dotView.contentMode = UIViewContentModeCenter;
+        dotView.contentMode = UIViewContentModeBottom;
         dotView.frame = CGRectMake(0, 0, self.dotSize.width, self.dotSize.height);
     }
     
