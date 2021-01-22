@@ -220,6 +220,7 @@ static CGSize const kDefaultDotSize = {8, 8};
         }
     } else {
         dotView = [[UIImageView alloc] initWithImage:self.dotImage];
+        dotView.contentMode = UIViewContentModeCenter;
         dotView.frame = CGRectMake(0, 0, self.dotSize.width, self.dotSize.height);
     }
     
@@ -356,6 +357,8 @@ static CGSize const kDefaultDotSize = {8, 8};
     } else if (self.dotViewClass && CGSizeEqualToSize(_dotSize, CGSizeZero)) {
         _dotSize = kDefaultDotSize;
         return _dotSize;
+    } else if (self.currentDotImage && CGSizeEqualToSize(_dotSize, CGSizeZero)) {
+        _dotSize = self.currentDotImage.size;
     }
     
     return _dotSize;
